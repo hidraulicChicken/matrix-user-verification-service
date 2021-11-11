@@ -2,7 +2,8 @@ const logger = require('./logger');
 const matrixUtils = require('./matrixUtils');
 const utils = require('./utils');
 
-require('dotenv').config();
+const path = require('path')
+require('dotenv').config({ path: path.resolve(__dirname, '../config/.env') })
 
 /**
  * Fetch power levels for a room.

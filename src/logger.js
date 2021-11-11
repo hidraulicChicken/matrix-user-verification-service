@@ -1,7 +1,9 @@
 const winston = require('winston');
 const { combine, timestamp, prettyPrint } = winston.format;
 
-require('dotenv').config();
+const path = require('path');
+const { loggers } = require('winston');
+require('dotenv').config({ path: path.resolve(__dirname, '../config/.env') })
 
 winston.configure({
     format: combine(

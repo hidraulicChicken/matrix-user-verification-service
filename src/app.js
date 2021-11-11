@@ -2,7 +2,8 @@ const express = require('express');
 const routes = require('./routes');
 const logger = require('./logger');
 
-require('dotenv').config();
+const path = require('path')
+require('dotenv').config({ path: path.resolve(__dirname, '../config/.env') })
 
 const app = express();
 const listenAddress = process.env.UVS_LISTEN_ADDRESS || '127.0.0.1';
